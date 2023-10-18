@@ -19,5 +19,5 @@ for i in range(numlistrow):
     list.append([random.randint])
     for j in range (numlistcolumn):
         list[0].append(random.randint)
-    print (str(i) * len(list))
+    print (i,j)
 
