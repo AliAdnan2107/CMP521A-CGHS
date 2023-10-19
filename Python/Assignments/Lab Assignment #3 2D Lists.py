@@ -41,7 +41,7 @@ while check==True: #Main Loop of program
     if choice.isdigit():
         if int(choice) == 1: #Row Of Data Code
             splitlist=input("What would you like to add to your row of data? Make sure your data has a space and comma between information \n")
-            rowappend=splitlist.split(" , ")
+            rowappend=splitlist.split(", ")
             mainlist.append(rowappend)
         elif int(choice) ==2: #Column Of Data Code
             for i in range (len(mainlist)):
