@@ -1,5 +1,5 @@
 {
     "board": "arduino:avr:uno",
-    "sketch": "Arduino\\Excersises\\testfile.ino",
+    "sketch": "Arduino\\Assignments\\Arduino_Lab_4_ALI_ADNAN\\Arduino_Lab_4_ALI_ADNAN\\Arduino_Lab_4_ALI_ADNAN.ino",
     "port": "COM3"
 }
