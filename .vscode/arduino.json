@@ -1,5 +1,6 @@
 {
     "board": "arduino:avr:uno",
     "sketch": "Arduino\\Assignments\\Arduino_Lab_4_ALI_ADNAN\\Arduino_Lab_4_ALI_ADNAN\\Arduino_Lab_4_ALI_ADNAN.ino",
-    "port": "COM3"
+    "port": "COM3",
+    "programmer": "arduino:arduinoisporg"
 }
