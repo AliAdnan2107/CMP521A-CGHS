@@ -1,7 +1,7 @@
 //Created By Ali Adnan
 //CMP521A
 //November 3rd 2023
-//This program will get a button to turn on a light.
+//This program will get a button to turn on a light and spin the servo 40 degrees and back.
 
 
 //Variables
@@ -24,7 +24,7 @@ void setup() {
 
 void loop() {
   buttonState = digitalRead(buttonPin); //If button is pressed
-  if (buttonState == HIGH) {
+  if (buttonState == LOW) {
     digitalWrite(ledPin, HIGH); // turn LED on
     for (pos = 0; pos <= 40; pos += 1) { // turn servo 40 degrees
     // in steps of 1 degree
