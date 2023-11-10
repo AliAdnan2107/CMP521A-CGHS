@@ -5,10 +5,10 @@
 
 
 //Variables
-const int buttonPin = 4;  // the number of the pushbutton pin
-const int ledPin = 7;    // the number of the LED pin
-const int SpeakerPin=10; // the number of the Speaker pin
-int buttonState = 0;  // variable for reading the pushbutton status
+const int buttonPin = 4;    // the number of the pushbutton pin
+const int ledPin = 7;       // the number of the LED pin
+const int SpeakerPin = 10;  // the number of the Speaker pin
+int buttonState = 0;        // variable for reading the pushbutton status
 
 //Code
 void setup() {
@@ -25,7 +25,7 @@ void loop() {
     // turn LED on, and Speaker:
     digitalWrite(ledPin, HIGH);
     digitalWrite(SpeakerPin, HIGH);
-  } else { //If Not
+  } else {  //If Not
     // turn LED off, And Speaker:
     digitalWrite(ledPin, LOW);
     digitalWrite(SpeakerPin, LOW);
