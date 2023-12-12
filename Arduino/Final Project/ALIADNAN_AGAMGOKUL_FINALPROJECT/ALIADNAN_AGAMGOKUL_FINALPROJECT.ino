@@ -28,8 +28,7 @@ const int greenledPin1 =  7; // Green LED 1
 const int greenledPin2 =  6; // Green LED 2
 const int blueledPin1 =  5; // Blue LED 1
 const int blueledPin2 =  4; // Blue LED 2
-const int speakerPin1 =  2; // Speaker Pin 1
-const int speakerPin2 = 0; // Speaker Pin 2 
+const int speakerPin =  2; // Speaker Pin 1
 const int redledPin1 =  3; // Red LED Pin 1
 const int redledPin2 =  8;  // Red LED Pin 2
 int lockState = 0; // Lock State
@@ -49,7 +48,7 @@ void setup() {
   pinMode(blueledPin2, OUTPUT);
   pinMode(redledPin1, OUTPUT);
   pinMode(redledPin2, OUTPUT);
-  pinMode(speakerPin1, OUTPUT);
+  pinMode(speakerPin, OUTPUT);
   myservo1.attach(ServoPin1); // Attach Servo's
   myservo2.attach(ServoPin2);
   myservo1.write(180); // Set Servo's to Lock Position
