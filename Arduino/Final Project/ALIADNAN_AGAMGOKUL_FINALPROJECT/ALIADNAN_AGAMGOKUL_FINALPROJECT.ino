@@ -1,5 +1,6 @@
 /*
-Created By Ali Adnan & Agam Gokul
+Created by SRITU Hobbies
+Modified By Ali Adnan & Agam Gokul
 CMP521A
 Arduino Final Project
 This Project will open a door using a lock connected to a RFID/NFC Lock System
