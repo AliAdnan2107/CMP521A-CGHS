@@ -29,7 +29,7 @@ inc=0
 #Code
 
 print ("Welcome to my program!")
-while check==True: #Main Loop of program
+while check is True: #Main Loop of program
     print ("Please Pick an option")
     print ("1 - Add A Row Of Data")
     print ("2- Add A Column Of Data")
