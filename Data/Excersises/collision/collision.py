@@ -12,14 +12,13 @@ i=0
 path="Collisions_from_1980.csv"
 file=open(path,newline="")
 reader=csv.reader(file)
-
 header=next(reader)
 data=[row for row in reader]
 
 
 for a in range (len(data)):
     col1=data[a][0]
-    col2=data[a][1]
+    col2=data[a][2]
     x.append(int(col1))
     y.append(int(col2))
 
