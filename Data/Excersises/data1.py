@@ -11,6 +11,7 @@ plt.ylabel("send help!")
 plt.title ("i love comp sci (optional)")
 plt.legend()
 plt.show()
+
 '''
 populationages=[22,44,11,13,15,17,21,42,85,93,13,53,16]
 
