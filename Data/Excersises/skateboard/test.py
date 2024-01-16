@@ -20,4 +20,5 @@ for genre in genres:
 
 # Creating the pie chart
 plt.pie(genre_counts.values(), labels=genre_counts.keys(), autopct='%1.1f%%')
+plt.title("Skateboard Music")
 plt.show()
