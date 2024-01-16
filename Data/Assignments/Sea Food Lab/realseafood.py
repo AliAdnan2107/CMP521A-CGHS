@@ -1,13 +1,12 @@
 #Created By Ali Adnan
 #CMP521A
 #January 12th 2024
-#This Program will take the Seafood .csv file and format, graph and display at as per user's choice.
+#This Program will take the Seafood .csv file and format, graph and display a sorted graph between Lobster and Groundfish.
 
 #Variables & Libraries
 
 import matplotlib.pyplot as plt
 import csv
-import time
 
 yearlist = [] #List Of Years
 loblist = [] #Licensed Lobsters
