@@ -111,10 +111,10 @@ for i in range(len(YearList)):  #Main Loop of sorting
 if len(TotalList) == 4: #Post 2000 (Trailer Era)
     Vehicles1 = ["Cars", "Trucks", "Trailers", "Motorcycles"]
     plt.pie(TotalList, labels=Vehicles1, autopct='%1.1f%%')  #Create Pie Chart
-    plt.title('Motor Vehicle Registration Index')
+    plt.title(f"{choice} - {choice2} Motor Vehicle Registration Index")
     plt.show()
 else: #Pre 2000 (No Trailer Era)
     Vehicles2 = ["Cars", "Trucks", "Motorcycles"]
     plt.pie(TotalList, labels=Vehicles2, autopct='%1.1f%%')  #Create Pie Chart
-    plt.title('Motor Vehicle Registration Index')
+    plt.title(f"{choice} - {choice2} Motor Vehicle Registration Index")
     plt.show()
