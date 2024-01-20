@@ -3,6 +3,12 @@
 #January 19th 2024
 #Final Data Project that will sort through a spotify most listened songs .csv
 
+
+'''
+TODO-
+fix sorting/graphing to actually make sense
+'''
+
 #Variables & Libaries
 
 import matplotlib.pyplot as plt
@@ -55,8 +61,11 @@ while True:
         print (" 3 - By Released Year")
         indexinp=int(input("Please pick a indexing option : "))
         if indexinp is 1:
-            print("")
-            print ("Track name (TBC)")
+            track_name = input("Please enter the name of your Track (SOME CHARACTERS ARENT RECOGNIZED): ")
+            for row in data:
+                if row[0] == track_name:
+                    print(row)
+                    
         elif indexinp is 2:
             print("")
             print ("Artist Name (TBC)")
@@ -69,11 +78,35 @@ while True:
 
 #Sorting
     elif userinp is 2:
-        print ("Sort data (TBC)")
+        print ("How would you like to sort your data?")
+        print (" 1 - By Track Name")
+        print (" 2 - By Artist Name")
+        print (" 3 - By Released Year")
+        sortinp=int(input("Please pick a sorting option : "))
+        if sortinp is 1:
+            print ("Track Name (TBC)")
+        elif sortinp is 2:
+            print ("Artist Name (TBC)")
+        elif sortinp is 3:
+            print ("Released Year (TBC)")
+        else:
+            print ("Invalid Entry, Please try again.")
 
 #Graphing
     elif userinp is 3:
-        print ("Graph Data (TBC)")
+        print ("What data would you like to graph?")
+        print (" 1 - Track Name")
+        print (" 2 - Artist Name")
+        print (" 3 - Released Year")
+        graphinp=int(input("Please pick a graphing option : "))
+        if graphinp is 1:
+            print ("Track Name (TBC)")
+        elif graphinp is 2:
+            print ("Artist Name (TBC)")
+        elif graphinp is 3:
+            print ("Released Year (TBC)")
+        else:
+            print ("Invalid Entry, Please try again.")
 
 #Quit and Failsafe
     elif userinp is 4:
