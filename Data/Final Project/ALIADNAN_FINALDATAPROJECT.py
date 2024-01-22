@@ -92,33 +92,61 @@ while True:
             print ("Invalid Entry, Try again")
 
 #Sorting
+
     elif userinp is 2:
-        print ("How would you like to sort your data? (Alphabetical / Numerical Order)")
+        print ("What data would you like to sort by?")
         print (" 1 - By Track Name")
         print (" 2 - By Artist Name")
         print (" 3 - By Released Year")
         sortinp=int(input("Please pick a sorting option : "))
         if sortinp == 1:
-            sorted_data = sorted(data[1:], key=lambda x: x[0])  # Sort by Track Name
-            for row in sorted_data:
-                print (row)
-                sorted_track_names.append(row[0])
-                print ("")
-            print ("All data sorted into a list.")
+            sortinp2=int(input("Alphabetical Order (1) or Reversed Alphabetical Order (2) : "))
+            if sortinp2 is 1:
+                sorted_data = sorted(data[1:], key=lambda x: x[0], reverse=False)  # Sort by Track Name
+                for row in sorted_data:
+                    print (row)
+                    sorted_track_names.append(row[0])
+                    print ("")
+                print ("All data sorted into a list.")
+            elif sortinp2 is 2: 
+                sorted_data = sorted(data[1:], key=lambda x: x[0], reverse=True)  # Sort by Track Name
+                for row in sorted_data:
+                    print (row)
+                    sorted_track_names.append(row[0])
+                    print ("")
+                print ("All data sorted into a list.")
         elif sortinp == 2:
-            sorted_data = sorted(data[1:], key=lambda x: x[1])  # Sort by Artist Name
-            for row in sorted_data:
-                print(row)
-                sorted_artist_names.append(row[0])
-                print ("")
-            print ("All data sorted into a list.")
+            sortinp2=int(input("Alphabetical Order (1) or Reversed Alphabetical Order (2) : "))
+            if sortinp2 is 1:
+                sorted_data = sorted(data[1:], key=lambda x: x[1], reverse=False)  # Sort by Track Name
+                for row in sorted_data:
+                    print (row)
+                    sorted_artist_names.append(row[0])
+                    print ("")
+                print ("All data sorted into a list.")
+            elif sortinp2 is 2: 
+                sorted_data = sorted(data[1:], key=lambda x: x[1], reverse=True)  # Sort by Track Name
+                for row in sorted_data:
+                    print (row)
+                    sorted_artist_names.append(row[0])
+                    print ("")
+                print ("All data sorted into a list.")
         elif sortinp == 3:
-            sorted_data = sorted(data[1:], key=lambda x: (int(x[3]), int(x[4])))  # Sort by Released Year
-            for row in sorted_data:
-                print(row)
-                sorted_released_years.append(row[0])
-                print ("")
-            print ("All data sorted into a list.")
+            sortinp2=int(input("Least to Greatest (1) or Greatest to least? (2) : "))
+            if sortinp2 is 1:
+                sorted_data = sorted(data[1:], key=lambda x: (int(x[3]), int(x[4])), reverse=True)  # Sort by Released Year
+                for row in sorted_data:
+                    print(row)
+                    sorted_released_years.append(row[0])
+                    print ("")
+                print ("All data sorted into a list.")
+            elif sortinp2 is 2:
+                sorted_data = sorted(data[1:], key=lambda x: (int(x[3]), int(x[4])), reverse=False)  # Sort by Released Year
+                for row in sorted_data:
+                    print(row)
+                    sorted_released_years.append(row[0])
+                    print ("")
+                print ("All data sorted into a list.")
         else:
             print("Invalid Entry, Please try again.")
 
