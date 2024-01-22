@@ -6,7 +6,7 @@
 
 '''
 TODO-
-fix sorting/graphing to actually make sense
+let graphing work
 '''
 
 #Variables & Libaries
@@ -14,6 +14,10 @@ fix sorting/graphing to actually make sense
 import matplotlib.pyplot as plt
 import csv
 import time
+header1=["Track Name","Artist Name","Artist Count","Released Year","Released Month","Released Day"]
+sorted_track_names = []
+sorted_artist_names = []
+sorted_released_years = []
 
 #Code
 
@@ -43,9 +47,11 @@ for a in range(len(data)):  #Convert all data from .csv and throw into a list
 
 
 #Menu---------
+print ("")
 print ("Welcome to my data sorting program")
 print ("This program will sort through a 'Most listened to songs on Spotify' List")
 while True:
+    print("")
     print ("Menu")
     print(" 1 - Search Data ")
     print(" 2 - Sort Data ")
@@ -61,36 +67,60 @@ while True:
         print (" 3 - By Released Year")
         indexinp=int(input("Please pick a indexing option : "))
         if indexinp is 1:
-            track_name = input("Please enter the name of your Track (SOME CHARACTERS ARENT RECOGNIZED): ")
+            track_name = input("Please enter the name of your Track (SOME CHARACTERS ARENT RECOGNIZED) : ").lower()
+            print("")
+            print (', '.join(header1))
             for row in data:
-                if row[0] == track_name:
-                    print(row)
-                    
+                if row[0].lower() == track_name:
+                    print(', '.join(row[:6]))
         elif indexinp is 2:
+            artist_name = input("Please enter the name of the Artist (SOME CHARACTERS ARENT RECOGNIZED) : ").lower()
             print("")
-            print ("Artist Name (TBC)")
+            print (', '.join(header1))
+            for row in data:
+                if artist_name in row[1].lower():
+                    print(', '.join(row[:6]))
         elif indexinp is 3:
+            released_year = int(input("Please enter the released year: "))
             print("")
-            print ("Released Year (TBC")
+            print (', '.join(header1))
+            for row in data:
+                if int(row[3]) == released_year:
+                    print(', '.join(row[:6]))
         else:
             print("")
             print ("Invalid Entry, Try again")
 
 #Sorting
     elif userinp is 2:
-        print ("How would you like to sort your data?")
+        print ("How would you like to sort your data? (Alphabetical / Numerical Order)")
         print (" 1 - By Track Name")
         print (" 2 - By Artist Name")
         print (" 3 - By Released Year")
         sortinp=int(input("Please pick a sorting option : "))
-        if sortinp is 1:
-            print ("Track Name (TBC)")
-        elif sortinp is 2:
-            print ("Artist Name (TBC)")
-        elif sortinp is 3:
-            print ("Released Year (TBC)")
+        if sortinp == 1:
+            sorted_data = sorted(data[1:], key=lambda x: x[0])  # Sort by Track Name
+            for row in sorted_data:
+                print (row)
+                sorted_track_names.append(row[0])
+                print ("")
+            print ("All data sorted into a list.")
+        elif sortinp == 2:
+            sorted_data = sorted(data[1:], key=lambda x: x[1])  # Sort by Artist Name
+            for row in sorted_data:
+                print(row)
+                sorted_artist_names.append(row[0])
+                print ("")
+            print ("All data sorted into a list.")
+        elif sortinp == 3:
+            sorted_data = sorted(data[1:], key=lambda x: (int(x[3]), int(x[4])))  # Sort by Released Year
+            for row in sorted_data:
+                print(row)
+                sorted_released_years.append(row[0])
+                print ("")
+            print ("All data sorted into a list.")
         else:
-            print ("Invalid Entry, Please try again.")
+            print("Invalid Entry, Please try again.")
 
 #Graphing
     elif userinp is 3:
