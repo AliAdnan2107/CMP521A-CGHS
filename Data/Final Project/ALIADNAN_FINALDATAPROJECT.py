@@ -153,16 +153,22 @@ while True:
 #Graphing
     elif userinp is 3:
         print ("What data would you like to graph?")
-        print (" 1 - Track Name")
-        print (" 2 - Artist Name")
-        print (" 3 - Released Year")
+        print (" 1 - Track Name vs Released Year")
+        print (" 2 - Artist Name vs  Highest Streamed Song")
+        print (" 3 - Released Year vs Artist Count")
         graphinp=int(input("Please pick a graphing option : "))
         if graphinp is 1:
-            print ("Track Name (TBC)")
+            plt.figure(figsize=(10, 6))
+            plt.bar(sorted_track_names[:10], sorted_released_years[:10])
+            plt.xlabel('Track Name')
+            plt.ylabel('Released Year')
+            plt.title('Top 10 Tracks vs Released Year')
+            plt.xticks(rotation=45)
+            plt.show()
         elif graphinp is 2:
-            print ("Artist Name (TBC)")
+            print ("Artist Name vs Highest Streamed Song")
         elif graphinp is 3:
-            print ("Released Year (TBC)")
+            print ("Released Year vs Artist Count")
         else:
             print ("Invalid Entry, Please try again.")
 
