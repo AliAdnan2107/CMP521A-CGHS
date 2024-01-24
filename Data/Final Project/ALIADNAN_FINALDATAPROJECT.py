@@ -75,7 +75,7 @@ while True:
             print("")
             print ("Invalid Entry, Try again")
 
-#Sorting
+#Sorting-------------------
     elif userinp is 2:
         print ("What data would you like to sort")
         print (" 1 - Track Name")
@@ -134,7 +134,7 @@ while True:
             print("Invalid Entry, Please try again.")
 
 
-#Graphing
+#Graphing--------------------------------------
     elif userinp is 3:
         print("What data would you like to graph? (MUST SORT FIRST, IF NOT SORTED TYPE 4)")
         print(" 1 - 10 Random Songs vs Released Year")
@@ -181,7 +181,7 @@ while True:
             print("Invalid Entry, Please try again.")
 
 
-#Quit and Failsafe
+#Quit and Failsafe-------------------------------
     elif userinp is 4:
         print ("Thank you for using my program!")
         break
