@@ -6,7 +6,7 @@
 
 '''
 TODO-
-let graphing work
+COMPLETE!
 '''
 
 #Variables & Libaries
