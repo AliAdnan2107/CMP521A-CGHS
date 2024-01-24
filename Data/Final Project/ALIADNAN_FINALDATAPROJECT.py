@@ -138,7 +138,7 @@ while True:
     elif userinp is 3:
         print("What data would you like to graph? (MUST SORT FIRST, IF NOT SORTED TYPE 4)")
         print(" 1 - 10 Random Songs vs Released Year")
-        print(" 2 - Artist Name vs Highest Streamed Song")
+        print(" 2 - 10 Random Artists vs Highest Streamed Song")
         print(" 3 - Released Year vs Artist Count")
         graphinp = int(input("Please pick a graphing option : "))  
         if graphinp == 1:
@@ -156,16 +156,16 @@ while True:
             plt.show()
         elif graphinp == 2:
             random_artists = random.sample(sorted_data, 10)
+            max_streams = max(int(row[8]) for row in sorted_data[:10])
+            step_size = max_streams // 10 if max_streams % 10 == 0 else max_streams // 10 + 1
+            y_ticks = [locale.format_string("%d", i, grouping=True) for i in range(0, max_streams + 1, step_size)]
             plt.figure(figsize=(10, 6))
             plt.bar([row[1] for row in random_artists], [int(row[8]) for row in random_artists])  # Assuming Streams is in column [8]
             plt.xlabel('Artist Name')
             plt.ylabel('Streams')
-            plt.title('Top 10 Artists vs Highest Streamed Song')
+            plt.title('10 Random Artists vs Highest Streamed Song')
             plt.xticks(rotation=45)
             locale.setlocale(locale.LC_ALL, '')
-            max_streams = max(int(row[8]) for row in sorted_data[:10])
-            step_size = max_streams // 10 if max_streams % 10 == 0 else max_streams // 10 + 1
-            y_ticks = [locale.format_string("%d", i, grouping=True) for i in range(0, max_streams + 1, step_size)]
             plt.yticks(range(0, max_streams + 1, step_size), y_ticks)  # Adjust the range and step based on your data
             plt.show()
         elif graphinp is 3:
