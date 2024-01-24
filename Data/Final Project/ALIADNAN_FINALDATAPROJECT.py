@@ -13,11 +13,14 @@ let graphing work
 
 import matplotlib.pyplot as plt
 import csv
-import time
+import random
 header1=["Track Name","Artist Name","Artist Count","Released Year","Released Month","Released Day"]
 sorted_track_names = []
 sorted_artist_names = []
 sorted_released_years = []
+x_values = []
+y_values = []
+labels = []
 
 #Code
 
@@ -27,24 +30,6 @@ file = open(path, newline='')
 reader=csv.reader(file)
 header=next(reader)
 data=[row for row in reader]
-
-for a in range(len(data)):  #Convert all data from .csv and throw into a list
-    TrackName=data[a][0]
-    ArtistName=data[a][1]
-    ArtistCount=data[a][2]
-    ReleasedYear=data[a][3]
-    ReleasedMonth=data[a][4]
-    ReleasedDay=data[a][5]
-    InSpotifyPlaylists=data[a][6]
-    InSpotifyCharts=data[a][7]
-    SpotifyStreams=data[a][8]
-    InApplePlaylists=data[a][9]
-    InAppleCharts=data[a][10]
-    InDeezerPlaylists=data[a][11]
-    InDeezerCharts=data[a][12]
-    InShazamCharts=data[a][13]
-
-
 
 #Menu---------
 print ("")
@@ -136,14 +121,14 @@ while True:
                 sorted_data = sorted(data[1:], key=lambda x: (int(x[3]), int(x[4])), reverse=True)  # Sort by Released Year
                 for row in sorted_data:
                     print(row)
-                    sorted_released_years.append(row[0])
+                    sorted_released_years.append(row[3])
                     print ("")
                 print ("All data sorted into a list.")
             elif sortinp2 is 2:
                 sorted_data = sorted(data[1:], key=lambda x: (int(x[3]), int(x[4])), reverse=False)  # Sort by Released Year
                 for row in sorted_data:
                     print(row)
-                    sorted_released_years.append(row[0])
+                    sorted_released_years.append(row[3])
                     print ("")
                 print ("All data sorted into a list.")
         else:
@@ -153,18 +138,24 @@ while True:
 #Graphing
     elif userinp is 3:
         print("What data would you like to graph?")
-        print(" 1 - Track Name vs Released Year")
+        print(" 1 - 10 Random Songs vs Released Year")
         print(" 2 - Artist Name vs Highest Streamed Song")
         print(" 3 - Released Year vs Artist Count")
-        graphinp = int(input("Please pick a graphing option : "))
-    
-        if graphinp is 1:
+        graphinp = int(input("Please pick a graphing option : "))  
+        if graphinp == 1:
+            num_tracks = len(sorted_track_names)
+            random_indices = random.sample(range(num_tracks), 10)
             plt.figure(figsize=(10, 6))
-            plt.bar(sorted_track_names[:10], sorted_released_years[:10])
-            plt.xlabel('Track Name')
+            for i in random_indices:
+                x_values.append(i + 1)
+                y_values.append(sorted_released_years[i])
+                labels.append(sorted_track_names[i])
+            plt.scatter(x_values, y_values)
+            plt.xlabel('Track Number')
             plt.ylabel('Released Year')
-            plt.title('Top 10 Tracks vs Released Year')
-            plt.xticks(rotation=45)
+            plt.title('Randomly Selected 10 Tracks vs Released Year')
+            for x, y, label in zip(x_values, y_values, labels):
+                plt.text(x, y, label, ha='right', va='bottom', rotation=45)
             plt.show()
     
         elif graphinp is 2:
@@ -182,6 +173,7 @@ while True:
             plt.xlabel('Released Year')
             plt.ylabel('Artist Count')
             plt.title('Released Year vs Artist Count')
+            plt.xticks(rotation=45)
             plt.show()
     
         else:
