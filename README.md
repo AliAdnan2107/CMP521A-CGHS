@@ -1,5 +1,5 @@
 # CMP521A
- All of my excersises, assignments, and test files from the CMP521A Course Taught by Mr.MacDougald at Colonel Gray High School.
+ All of my excersises, assignments, and test files from the CMP521A Course at CGHS
 :)
 
 Excersises - COMPLETE SCRAP , MAY BE INCORRECT
