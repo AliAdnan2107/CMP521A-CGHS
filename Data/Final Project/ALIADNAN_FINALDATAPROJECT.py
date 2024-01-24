@@ -92,7 +92,6 @@ while True:
             print ("Invalid Entry, Try again")
 
 #Sorting
-
     elif userinp is 2:
         print ("What data would you like to sort by?")
         print (" 1 - By Track Name")
@@ -150,13 +149,15 @@ while True:
         else:
             print("Invalid Entry, Please try again.")
 
+
 #Graphing
     elif userinp is 3:
-        print ("What data would you like to graph?")
-        print (" 1 - Track Name vs Released Year")
-        print (" 2 - Artist Name vs  Highest Streamed Song")
-        print (" 3 - Released Year vs Artist Count")
-        graphinp=int(input("Please pick a graphing option : "))
+        print("What data would you like to graph?")
+        print(" 1 - Track Name vs Released Year")
+        print(" 2 - Artist Name vs Highest Streamed Song")
+        print(" 3 - Released Year vs Artist Count")
+        graphinp = int(input("Please pick a graphing option : "))
+    
         if graphinp is 1:
             plt.figure(figsize=(10, 6))
             plt.bar(sorted_track_names[:10], sorted_released_years[:10])
@@ -165,12 +166,27 @@ while True:
             plt.title('Top 10 Tracks vs Released Year')
             plt.xticks(rotation=45)
             plt.show()
+    
         elif graphinp is 2:
-            print ("Artist Name vs Highest Streamed Song")
+            plt.figure(figsize=(10, 6))
+            plt.bar(sorted_artist_names[:10], [int(row[8]) for row in sorted_data[:10]])  # Assuming Streams is in column [8]
+            plt.xlabel('Artist Name')
+            plt.ylabel('Streams')
+            plt.title('Top 10 Artists vs Highest Streamed Song')
+            plt.xticks(rotation=45)
+            plt.show()
+    
         elif graphinp is 3:
-            print ("Released Year vs Artist Count")
+            plt.figure(figsize=(10, 6))
+            plt.plot([int(row[3]) for row in sorted_data], [int(row[2]) for row in sorted_data])  # Assuming Released Year is in column [3] and Artist Count is in column [2]
+            plt.xlabel('Released Year')
+            plt.ylabel('Artist Count')
+            plt.title('Released Year vs Artist Count')
+            plt.show()
+    
         else:
-            print ("Invalid Entry, Please try again.")
+            print("Invalid Entry, Please try again.")
+
 
 #Quit and Failsafe
     elif userinp is 4:
