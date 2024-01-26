@@ -1,4 +1,4 @@
-# CMP521A
+# CMP521A CGHS
 Course Status - Complete
 
 All of my excersises, assignments, and test files from the CMP521A Course at CGHS!
